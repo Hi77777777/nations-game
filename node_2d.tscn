@@ -26,3 +26,4 @@ collision_enabled = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kdubu")
+autoplay = true
