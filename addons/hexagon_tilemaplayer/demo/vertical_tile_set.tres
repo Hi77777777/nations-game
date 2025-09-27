@@ -8,22 +8,30 @@
 texture = ExtResource("1_q3d33")
 texture_region_size = Vector2i(190, 164)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-95, 0, -47.5, -82, 47.5, -82, 95, 0, 47.5, 82, -47.5, 82)
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-95, 0, -47.5, -82, 47.5, -82, 95, 0, 47.5, 82, -47.5, 82)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rdgb"]
 texture = ExtResource("2_yisdk")
 texture_region_size = Vector2i(190, 164)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-95, 0, -47.5, -82, 47.5, -82, 95, 0, 47.5, 82, -47.5, 82)
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-95, 0, -47.5, -82, 47.5, -82, 95, 0, 47.5, 82, -47.5, 82)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkvoj"]
 texture = ExtResource("3_6rdgb")
 texture_region_size = Vector2i(190, 164)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-95, 0, -47.5, -82, 47.5, -82, 95, 0, 47.5, 82, -47.5, 82)
 
 [resource]
 resource_name = "Vertical"
 tile_shape = 3
 tile_offset_axis = 1
 tile_size = Vector2i(190, 164)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 0
+physics_layer_1/collision_mask = 0
 custom_data_layer_0/name = "is_ocean"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "pathfinding_weight"
