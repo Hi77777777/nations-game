@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=6 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://b745agjfcfsx5" path="res://character_body_2d.gd" id="3_epypp"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_epypp"]
-size = Vector2(100, 100)
+[ext_resource type="PackedScene" uid="uid://dstwouben6044" path="res://plane.tscn" id="3_0hol4"]
+[ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,8 +17,10 @@ tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP//AQAAAAAAAAD7/wAAAQAAAAA
 tile_set = ExtResource("1_wtcfe")
 collision_enabled = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("3_epypp")
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_q6r6c")]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = SubResource("PlaceholderTexture2D_epypp")
+[node name="CharacterBody2D3" parent="." instance=ExtResource("4_q6r6c")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_0hol4")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
