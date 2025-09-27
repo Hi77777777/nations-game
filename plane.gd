@@ -19,16 +19,21 @@ func move_to_random_neighbour():
 
 	for dir in directions:
 		var neighbour_pos = tile_position + dir
-		if tilemap.get_used_cells().has(neighbour_pos) and neighbour_pos != prev_position:
+		if (tilemap.get_used_cells_by_id(1) + tilemap.get_used_cells_by_id(2)).has(neighbour_pos) and neighbour_pos != prev_position:
 			var neighbour_id = tilemap.get_cell_source_id(neighbour_pos)
 			neighbours.append({
 				"position": neighbour_pos,
 				"id": neighbour_id
 			})
 	
-	prev_position = tile_position
 	
-	var random_neighbour = neighbours.pick_random()
+	
+	var random_neighbour = neighbours.pick_random() if not neighbours.is_empty() else {"position":prev_position}
+	
+	if typeof(random_neighbour) == TYPE_NIL:
+		random_neighbour = {"position":prev_position}
+	
+	prev_position = tile_position
 	
 	tile_position = random_neighbour["position"]
 	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
@@ -39,14 +44,16 @@ func _process(delta: float) -> void:
 		move_to_random_neighbour()
 
 func _ready() -> void:
+	randomize()
+
 	var tilemap = $"../TileMapLayer"
-	var used_cells = tilemap.get_used_cells()
+	var used_cells = tilemap.get_used_cells_by_id(1) + tilemap.get_used_cells_by_id(2)
 	
 	if used_cells.is_empty():
 		return
 
-	var first_cell = used_cells[0]
-	tile_position = first_cell
+	var random_cell = used_cells.pick_random()
+	tile_position = random_cell
 
 	# Move the character to that tile's world position
-	self.position = tilemap.to_global(tilemap.map_to_local(first_cell))
+	self.position = tilemap.to_global(tilemap.map_to_local(random_cell))
