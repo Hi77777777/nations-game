@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://l4anov1m1f53"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://l4anov1m1f53"]
 
 [ext_resource type="Texture2D" uid="uid://c3tqvwb12rhq3" path="res://addons/hexagon_tilemaplayer/demo/tile_vertical.png" id="1_q3d33"]
 [ext_resource type="Texture2D" uid="uid://c1mhlgs5s4glt" path="res://images/ocean.png" id="2_yisdk"]
+[ext_resource type="Texture2D" uid="uid://bkvvdnvpdldsc" path="res://images/grass.png" id="3_6rdgb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3d33"]
 texture = ExtResource("1_q3d33")
@@ -10,6 +11,11 @@ texture_region_size = Vector2i(190, 164)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rdgb"]
 texture = ExtResource("2_yisdk")
+texture_region_size = Vector2i(190, 164)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkvoj"]
+texture = ExtResource("3_6rdgb")
 texture_region_size = Vector2i(190, 164)
 0:0/0 = 0
 
@@ -26,3 +32,4 @@ custom_data_layer_2/name = "color"
 custom_data_layer_2/type = 21
 sources/0 = SubResource("TileSetAtlasSource_q3d33")
 sources/1 = SubResource("TileSetAtlasSource_6rdgb")
+sources/2 = SubResource("TileSetAtlasSource_vkvoj")
