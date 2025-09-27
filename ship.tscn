@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://nomwq8u6s7dq"]
+[gd_scene load_steps=5 format=3 uid="uid://nomwq8u6s7dq"]
 
 [ext_resource type="Script" uid="uid://ei8pvcddipqp" path="res://ship.gd" id="1_l3rv8"]
 [ext_resource type="Texture2D" uid="uid://o2pubb8jyo35" path="res://ship_720-removebg-preview.png" id="2_4cq66"]
+[ext_resource type="Script" uid="uid://ghkkxju0ajj" path="res://vehicle.gd" id="3_v4325"]
+[ext_resource type="Script" uid="uid://casq5mqts0l8" path="res://click.gd" id="4_c3vuw"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_l3rv8")
@@ -10,3 +12,12 @@ script = ExtResource("1_l3rv8")
 position = Vector2(-1.1920929e-07, 4.7683716e-07)
 scale = Vector2(0.31199685, 0.39800996)
 texture = ExtResource("2_4cq66")
+script = ExtResource("3_v4325")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.1920929e-07, 4.7683716e-07)
+scale = Vector2(0.31199685, 0.39800996)
+script = ExtResource("4_c3vuw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -70, 70, 0, 0, 70, -70, 0)
