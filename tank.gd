@@ -26,12 +26,14 @@ func move_to_random_neighbour():
 				"id": neighbour_id
 			})
 	
-	prev_position = tile_position
 	
-	var random_neighbour = neighbours.pick_random()
+	
+	var random_neighbour = neighbours.pick_random() if not neighbours.is_empty() else {"position":prev_position}
 	
 	if typeof(random_neighbour) == TYPE_NIL:
 		random_neighbour = {"position":prev_position}
+	
+	prev_position = tile_position
 	
 	tile_position = random_neighbour["position"]
 	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
