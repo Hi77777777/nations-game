@@ -34,7 +34,7 @@ func move_to_random_neighbour():
 		random_neighbour = {"position":prev_position}
 	
 	tile_position = random_neighbour["position"]
-	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
+	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"])) 
 
 func _process(delta: float) -> void:
 	time_passed += 1
