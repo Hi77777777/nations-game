@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://l4anov1m1f53"]
+
+[ext_resource type="Texture2D" uid="uid://c3tqvwb12rhq3" path="res://addons/hexagon_tilemaplayer/demo/tile_vertical.png" id="1_q3d33"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3d33"]
+texture = ExtResource("1_q3d33")
+texture_region_size = Vector2i(190, 164)
+0:0/0 = 0
+
+[resource]
+resource_name = "Vertical"
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(190, 164)
+custom_data_layer_0/name = "is_ocean"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "pathfinding_weight"
+custom_data_layer_1/type = 3
+custom_data_layer_2/name = "color"
+custom_data_layer_2/type = 21
+sources/0 = SubResource("TileSetAtlasSource_q3d33")
