@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=17 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -13,6 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://uo8dbv0ga7jl" path="res://character_body_2d_7.tscn" id="11_hqns4"]
 [ext_resource type="PackedScene" uid="uid://b8bd1pxnqbaha" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://li1rfoo3r8si" path="res://pixil-frame-0.png" id="13_0h7mo"]
+[ext_resource type="Script" uid="uid://hapw110c83v1" path="res://character_body_2d_7.gd" id="14_d2bti"]
+[ext_resource type="Texture2D" uid="uid://d3bmw0k6dqc5u" path="res://nuke_720-removebg-preview.png" id="15_ta5nu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flf07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,3 +75,9 @@ position = Vector2(923, 99)
 position = Vector2(-2442, 1408)
 scale = Vector2(9.54, 6.8800006)
 texture = ExtResource("13_0h7mo")
+
+[node name="CharacterBody2D7" type="CharacterBody2D" parent="."]
+script = ExtResource("14_d2bti")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D7"]
+sprite_frames = SubResource("SpriteFrames_flf07")
