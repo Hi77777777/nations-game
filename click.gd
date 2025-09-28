@@ -22,10 +22,14 @@ func create_sprite(position: Vector2) -> void:
 	sprite.texture = sprite_texture
 	
 	# Position the sprite at the mouse click position
-	sprite.position = position
+	sprite.position = position + Vector2(-95, -82)
 	
 	sprite.scale = Vector2(1,1)
 	
 	# Add the sprite to the scene
 	$"../..".add_child(sprite)
 	
+	sprite.gui_input.connect(func (event):
+		if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			print(position)
+	)

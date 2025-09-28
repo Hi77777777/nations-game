@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://oydb6l15meym" path="res://5493408566738944_looped (2).wav" id="6_kdubu"]
-[ext_resource type="PackedScene" uid="uid://d3hgvrk1qxbx2" path="res://character_body_2d_4.tscn" id="7_d21ai"]
-[ext_resource type="PackedScene" uid="uid://yd3spvhwifq4" path="res://character_body_2d_5.tscn" id="8_rj586"]
-[ext_resource type="PackedScene" uid="uid://c6p8sx3lhr8ip" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
-[ext_resource type="PackedScene" uid="uid://delqtrmael3vb" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
-[ext_resource type="PackedScene" uid="uid://uo8dbv0ga7jl" path="res://character_body_2d_7.tscn" id="11_hqns4"]
-[ext_resource type="PackedScene" uid="uid://b8bd1pxnqbaha" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://bpjqssern4fgc" path="res://character_body_2d_4.tscn" id="7_d21ai"]
+[ext_resource type="PackedScene" uid="uid://btslbtgqcbem0" path="res://character_body_2d_5.tscn" id="8_rj586"]
+[ext_resource type="PackedScene" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
+[ext_resource type="PackedScene" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" path="res://character_body_2d_7.tscn" id="11_hqns4"]
+[ext_resource type="PackedScene" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
 
 [node name="Node2D" type="Node2D"]
 
