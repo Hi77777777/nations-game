@@ -39,6 +39,16 @@ func move_to_random_neighbour():
 	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
 
 func _process(delta: float) -> void:
+	var plane = $"../CharacterBody2D"
+	var ship = $"../CharacterBody2D3"
+	if plane and self.tile_position == plane.tile_position:
+		await get_tree().create_timer(2.0).timeout
+		self.queue_free()
+
+	else:
+		if ship and self.tile_position == ship.tile_position:
+			await get_tree().create_timer(2.0).timeout
+			self.queue_free()
 	time_passed += 1
 	if time_passed % 60 == 0:
 		move_to_random_neighbour()

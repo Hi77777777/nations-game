@@ -17,6 +17,8 @@ texture = ExtResource("2_1ealj")
 script = SubResource("GDScript_a62es")
 
 [node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+collision_mask = 0
 script = ExtResource("4_yfqcd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
