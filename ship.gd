@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var units = 9
 var tile_position := Vector2i(0, 0)
 var time_passed := 0
 var prev_position = null
@@ -22,6 +22,7 @@ func move_to_random_neighbour():
 		if tilemap.get_used_cells_by_id(1).has(neighbour_pos) and neighbour_pos != prev_position:
 			var neighbour_id = tilemap.get_cell_source_id(neighbour_pos)
 			neighbours.append({
+
 				"position": neighbour_pos,
 				"id": neighbour_id
 			})
@@ -42,6 +43,8 @@ func _process(delta: float) -> void:
 		if child is CharacterBody2D and child != self:
 			if self.tile_position == child.tile_position:
 				await get_tree().create_timer(2.0).timeout
+				units -= 1
+				print("units")
 				self.queue_free()
 				return # Exit early to avoid further checks after queue_free()
 

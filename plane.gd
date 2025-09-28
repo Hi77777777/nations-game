@@ -3,6 +3,7 @@ extends CharacterBody2D
 var tile_position := Vector2i(0, 0)
 var time_passed := 0
 var prev_position = null
+var units = 9
 
 func move_to_random_neighbour():
 	var neighbours := []
@@ -29,6 +30,7 @@ func move_to_random_neighbour():
 	
 	
 	
+	
 	var random_neighbour = neighbours.pick_random() if not neighbours.is_empty() else {"position":prev_position}
 	
 	if typeof(random_neighbour) == TYPE_NIL:
@@ -40,10 +42,13 @@ func move_to_random_neighbour():
 	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
 
 func _process(delta: float) -> void:
+
 	for child in get_parent().get_children():
 		if child is CharacterBody2D and child != self:
 			if self.tile_position == child.tile_position:
 				await get_tree().create_timer(2.0).timeout
+				units -= 1
+				print(units)
 				self.queue_free()
 				return # Exit early to avoid further checks after queue_free()
 
@@ -57,7 +62,6 @@ func get_can_go():
 
 func _ready() -> void:
 	randomize()
-
 	var tilemap = $"../TileMapLayer"
 	var used_cells = tilemap.get_used_cells_by_id(1) + tilemap.get_used_cells_by_id(2)
 	

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var units = 9
 var tile_position := Vector2i(0, 0)
 var time_passed := 0
 var prev_position = null
@@ -41,6 +41,8 @@ func _process(delta: float) -> void:
 		if child is CharacterBody2D and child != self:
 			if self.tile_position == child.tile_position:
 				await get_tree().create_timer(2.0).timeout
+				units -= 1
+				print("units")
 				self.queue_free()
 				return # Exit early to avoid further checks after queue_free()
 
