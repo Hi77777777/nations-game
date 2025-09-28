@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=27 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -18,6 +18,34 @@
 [ext_resource type="Texture2D" uid="uid://2fg4vgsjnedm" path="res://tsar-bomba1-removebg-preview_360.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://cow10gybe6sr8" path="res://lose_screen_720.png" id="17_k73cj"]
 [ext_resource type="AudioStream" uid="uid://uducwfakwr67" path="res://nuclear-explosion-386181.mp3" id="18_k73cj"]
+[ext_resource type="FontFile" uid="uid://0e6frm0k1m2i" path="res://Chalkduster.ttf" id="19_rjqkl"]
+
+[sub_resource type="Animation" id="Animation_k73cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(481.0003, 380.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_flf07"]
 resource_name = "nuke"
@@ -119,33 +147,6 @@ tracks/7/keys = {
 "values": [Vector2(0, 0), Vector2(5, 5)]
 }
 
-[sub_resource type="Animation" id="Animation_k73cj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(481.0003, 380.00003)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 5)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjqkl"]
 _data = {
 &"RESET": SubResource("Animation_k73cj"),
@@ -181,6 +182,14 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs4d3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vxoj"]
+font = ExtResource("19_rjqkl")
+font_size = 80
+font_color = Color(1, 0.06666667, 0.105882354, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -191,12 +200,15 @@ collision_enabled = false
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_q6r6c")]
 position = Vector2(764, 387)
 rotation = -0.00053149805
+start_cell = Vector2(10, 0)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("4_q6r6c")]
 position = Vector2(567, -18)
+start_cell = Vector2(-2, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_0hol4")]
 position = Vector2(643, 182)
+start_cell = Vector2(6, 2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kdubu")
@@ -205,21 +217,27 @@ max_polyphony = 64
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(-259, 425)
+start_cell = Vector2(-1, 3)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("8_rj586")]
 position = Vector2(257, 153)
+start_cell = Vector2(1, -15)
 
 [node name="CharacterBody2D8" parent="." instance=ExtResource("9_4d7sh")]
 position = Vector2(-480, 114)
+start_cell = Vector2(1, -5)
 
 [node name="CharacterBody2D9" parent="." instance=ExtResource("10_ir8iy")]
 position = Vector2(127, -441)
+start_cell = Vector2(7, -12)
 
 [node name="CharacterBody2D10" parent="." instance=ExtResource("11_hqns4")]
 position = Vector2(335, -166)
+start_cell = Vector2(10, -10)
 
 [node name="CharacterBody2D6" parent="." instance=ExtResource("12_x0ka3")]
 position = Vector2(923, 99)
+start_cell = Vector2(10, -12)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3374, 931.0001)
@@ -315,17 +333,43 @@ zoom = Vector2(0.15, 0.15)
 script = ExtResource("1_0e48y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="LoseScreen720" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -360.0002
-offset_top = -287.99997
-offset_right = -360.00024
-offset_bottom = -287.99997
+offset_right = -430.12506
+offset_bottom = -77.260254
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6000001, 1.140625)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("17_k73cj")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fs4d3")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -24.5
+offset_right = 71.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Lose
+Nobody wins in war"
+label_settings = SubResource("LabelSettings_7vxoj")
+horizontal_alignment = 1
