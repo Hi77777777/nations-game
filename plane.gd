@@ -15,6 +15,8 @@ var map_width := 1
 var offset := Vector2.ZERO
 var current_path := []
 
+@export var start_cell = Vector2(0, 0)
+
 # Cached walkable cells
 var walkable_cells := []
 var walkable_set := {} # dictionary keyed by "x:y" for fast lookup
@@ -92,8 +94,8 @@ func _ready() -> void:
 	map_width = max(int(max_x - min_x + 1), 1)
 
 	# Start at a random walkable tile
-	var random_cell = walkable_cells.pick_random()
-	tile_position = random_cell
+	#var random_cell = walkable_cells.pick_random()
+	tile_position = start_cell
 	position = tilemap.to_global(tilemap.map_to_local(tile_position))
 
 	# Build the A* graph
