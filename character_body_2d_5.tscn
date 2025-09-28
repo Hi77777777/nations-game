@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://yd3spvhwifq4"]
+[gd_scene load_steps=6 format=3 uid="uid://btslbtgqcbem0"]
 
 [ext_resource type="Script" uid="uid://0fd88jw35bpu" path="res://tank.gd" id="1_ia2xg"]
 [ext_resource type="Texture2D" uid="uid://dtbg51qgqvl0d" path="res://tank_720-removebg-preview.png" id="2_4ydke"]
@@ -22,7 +22,7 @@ collision_mask = 0
 script = ExtResource("3_u2ukr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -70, 70, -70, 100, 0, 70, 70, 0, 70, -70, 70, -100, 0, -70, -70)
+polygon = PackedVector2Array(0, -74, 44, -74, 87, 0, 44, 74, 0, 74, -44, 74, -87, 0, -44, -74)
 
 [node name="YellowOutline" type="Sprite2D" parent="."]
 texture = ExtResource("4_62mve")

@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func create_sprite(position: Vector2) -> void:
 	# Create the Sprite2D node
-	var sprite = Sprite2D.new()
+	var sprite = TextureRect.new()
 	
 	# Set the sprite's texture
 	sprite.texture = sprite_texture
@@ -28,3 +28,4 @@ func create_sprite(position: Vector2) -> void:
 	
 	# Add the sprite to the scene
 	$"../..".add_child(sprite)
+	

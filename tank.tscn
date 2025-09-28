@@ -7,7 +7,7 @@
 
 [sub_resource type="GDScript" id="GDScript_a62es"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 script = ExtResource("1_6lwfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,7 +22,7 @@ collision_mask = 0
 script = ExtResource("4_yfqcd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -70, 70, -70, 100, 0, 70, 70, 0, 70, -70, 70, -100, 0, -70, -70)
+polygon = PackedVector2Array(0, -74, 44, -74, 87, 0, 44, 74, 0, 74, -44, 74, -87, 0, -44, -74)
 
 [node name="YellowOutline" type="Sprite2D" parent="."]
 texture = ExtResource("4_lk6ub")
