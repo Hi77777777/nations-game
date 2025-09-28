@@ -185,7 +185,7 @@ func set_target(cell: Vector2) -> void:
 
 func get_can_go() -> Array:
 	var cells := []
-	for id in [1, 2]:
+	for id in [1]:
 		for c in tilemap.get_used_cells_by_id(id):
 			cells.append(Vector2(c))
 	return cells

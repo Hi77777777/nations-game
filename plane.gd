@@ -97,7 +97,7 @@ func _ready() -> void:
 	tile_position = start_cell
 	position = tilemap.to_global(tilemap.map_to_local(tile_position))
 
-	# Build the A* graph
+	# Build the A* t
 	astar = AStar2D.new()
 	_build_astar(walkable_cells)
 

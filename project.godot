@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Selections="*res://selections.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
