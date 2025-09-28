@@ -28,6 +28,7 @@ func move_to_random_neighbour():
 	
 	
 	
+	
 	var random_neighbour = neighbours.pick_random() if not neighbours.is_empty() else {"position":prev_position}
 	
 	if typeof(random_neighbour) == TYPE_NIL:
@@ -39,16 +40,12 @@ func move_to_random_neighbour():
 	self.position = tilemap.to_global(tilemap.map_to_local(random_neighbour["position"]))
 
 func _process(delta: float) -> void:
-	var tank = $"../CharacterBody2D2"
-	var ship = $"../CharacterBody2D3"
-	if tank and self.tile_position == tank.tile_position:
-		await get_tree().create_timer(2.0).timeout
-		self.queue_free()
-
-	else:
-		if ship and self.tile_position == ship.tile_position:
-			await get_tree().create_timer(2.0).timeout
-			self.queue_free()
+	for child in get_parent().get_children():
+		if child is CharacterBody2D and child != self:
+			if self.tile_position == child.tile_position:
+				await get_tree().create_timer(2.0).timeout
+				self.queue_free()
+				return # Exit early to avoid further checks after queue_free()
 
 	time_passed += 1
 	if time_passed % 60 == 0:
