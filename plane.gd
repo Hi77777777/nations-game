@@ -6,9 +6,10 @@ extends CharacterBody2D
 var tile_position := Vector2.ZERO
 var prev_position := Vector2.ZERO
 var frame_counter := 0
-var frames_per_move := 60  # change for faster/slower stepping
+var frames_per_move := 60  # Change for faster/slower stepping
+var units := 9  # Unit count
 
-var target_position = null  # set to Vector2(x, y) to enable A*
+var target_position = null  # Set to Vector2(x, y) to enable A*
 var astar: AStar2D
 var map_width := 1
 var offset := Vector2.ZERO
@@ -30,7 +31,6 @@ const NEIGHBOURS := [
 	Vector2(1, 1)
 ]
 
-
 # -------------------------
 # Helpers
 # -------------------------
@@ -49,14 +49,13 @@ func _id_to_cell(id: int) -> Vector2:
 func is_walkable(cell: Vector2) -> bool:
 	return walkable_set.has(_cell_key(cell))
 
-
 # -------------------------
 # Ready
 # -------------------------
 func _ready() -> void:
 	randomize()
 
-	# gather walkable tiles (IDs 1 and 2)
+	# Gather walkable tiles (IDs 1 and 2)
 	var used1 = tilemap.get_used_cells_by_id(1)
 	var used2 = tilemap.get_used_cells_by_id(2)
 
@@ -64,7 +63,7 @@ func _ready() -> void:
 	walkable_set.clear()
 
 	for c in used1:
-		var cf = Vector2(c) # convert to Vector2
+		var cf = Vector2(c)
 		walkable_cells.append(cf)
 		walkable_set[_cell_key(cf)] = true
 
@@ -78,7 +77,7 @@ func _ready() -> void:
 	if walkable_cells.is_empty():
 		return
 
-	# compute bounding box (offset both x and y)
+	# Compute bounding box (offset both x and y)
 	var min_x = walkable_cells[0].x
 	var max_x = walkable_cells[0].x
 	var min_y = walkable_cells[0].y
@@ -101,10 +100,9 @@ func _ready() -> void:
 	astar = AStar2D.new()
 	_build_astar(walkable_cells)
 
-
 func _build_astar(cells: Array) -> void:
 	for cell in cells:
-		astar.add_point(_cell_to_id(cell), cell) # store as Vector2
+		astar.add_point(_cell_to_id(cell), cell)
 
 	for cell in cells:
 		var from_id = _cell_to_id(cell)
@@ -113,7 +111,7 @@ func _build_astar(cells: Array) -> void:
 			if not is_walkable(n):
 				continue
 
-			# prevent corner-cutting for diagonals
+			# Prevent corner-cutting
 			if dir.x != 0 and dir.y != 0:
 				var c1 = cell + Vector2(dir.x, 0)
 				var c2 = cell + Vector2(0, dir.y)
@@ -124,7 +122,6 @@ func _build_astar(cells: Array) -> void:
 			if not astar.are_points_connected(from_id, to_id):
 				astar.connect_points(from_id, to_id)
 
-
 # -------------------------
 # Movement
 # -------------------------
@@ -134,6 +131,8 @@ func _process(_delta: float) -> void:
 		if child is CharacterBody2D and child != self:
 			if Vector2i(tile_position) == Vector2i(child.tile_position):
 				await get_tree().create_timer(2.0).timeout
+				units -= 1
+				print(units)
 				queue_free()
 				return
 
@@ -145,7 +144,6 @@ func _process(_delta: float) -> void:
 			_follow_astar()
 		else:
 			_move_random()
-
 
 func _move_random() -> void:
 	var neighbours := []
@@ -161,7 +159,6 @@ func _move_random() -> void:
 	prev_position = tile_position
 	tile_position = next_tile
 	position = tilemap.to_global(tilemap.map_to_local(next_tile))
-
 
 func _follow_astar() -> void:
 	if current_path.is_empty():
@@ -179,17 +176,12 @@ func _follow_astar() -> void:
 			target_position = null
 			current_path.clear()
 
-
 func get_astar_path(start: Vector2, goal: Vector2) -> Array:
-	print(astar.get_point_ids())
-	print(_cell_to_id(start), _cell_to_id(goal))
-	if not astar.has_point(_cell_to_id(start)) and not astar.has_point(_cell_to_id(goal)):
+	if not astar.has_point(_cell_to_id(start)) or not astar.has_point(_cell_to_id(goal)):
 		return []
 	
 	var path = astar.get_point_path(_cell_to_id(start), _cell_to_id(goal))
-	# AStar2D returns Vector2s already → round to integer cells
 	return Array(path).map(func(p): return Vector2(round(p.x), round(p.y)))
-
 
 # -------------------------
 # Utility
@@ -199,7 +191,6 @@ func set_target(cell: Vector2) -> void:
 	current_path.clear()
 
 func get_can_go() -> Array:
-	# Only allow walking on tiles with ID 1 or 2
 	var cells := []
 	for id in [1, 2]:
 		for c in tilemap.get_used_cells_by_id(id):

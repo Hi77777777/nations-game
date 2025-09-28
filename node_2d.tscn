@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=14 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
 [ext_resource type="PackedScene" path="res://character_body_2d_7.tscn" id="11_hqns4"]
 [ext_resource type="PackedScene" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://li1rfoo3r8si" path="res://pixil-frame-0.png" id="13_0h7mo"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,11 +26,14 @@ tile_set = ExtResource("1_wtcfe")
 collision_enabled = false
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_q6r6c")]
+position = Vector2(764, 387)
 rotation = -0.00053149805
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("4_q6r6c")]
+position = Vector2(567, -18)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_0hol4")]
+position = Vector2(643, 182)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kdubu")
@@ -37,13 +41,24 @@ autoplay = true
 max_polyphony = 64
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(-259, 425)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("8_rj586")]
+position = Vector2(257, 153)
 
 [node name="CharacterBody2D8" parent="." instance=ExtResource("9_4d7sh")]
+position = Vector2(-480, 114)
 
 [node name="CharacterBody2D9" parent="." instance=ExtResource("10_ir8iy")]
+position = Vector2(127, -441)
 
 [node name="CharacterBody2D10" parent="." instance=ExtResource("11_hqns4")]
+position = Vector2(335, -166)
 
 [node name="CharacterBody2D6" parent="." instance=ExtResource("12_x0ka3")]
+position = Vector2(923, 99)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2442, 1408)
+scale = Vector2(9.54, 6.8800006)
+texture = ExtResource("13_0h7mo")
