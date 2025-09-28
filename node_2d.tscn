@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dstwouben6044" path="res://plane.tscn" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
-[ext_resource type="AudioStream" uid="uid://d3clbq56cun4g" path="res://bg_audio.wav" id="6_kdubu"]
+[ext_resource type="AudioStream" uid="uid://cnel2pe25iexu" path="res://5493408566738944.wav" id="6_kdubu"]
 
 [node name="Node2D" type="Node2D"]
 

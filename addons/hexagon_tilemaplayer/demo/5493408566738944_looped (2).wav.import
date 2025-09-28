@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q80iy3t8yqxl"
+path="res://.godot/imported/5493408566738944_looped (2).wav-a97fc9ef0cbda7a45165cf25171d50ea.sample"
+
+[deps]
+
+source_file="res://addons/hexagon_tilemaplayer/demo/5493408566738944_looped (2).wav"
+dest_files=["res://.godot/imported/5493408566738944_looped (2).wav-a97fc9ef0cbda7a45165cf25171d50ea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
