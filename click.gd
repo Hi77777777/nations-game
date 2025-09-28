@@ -31,5 +31,5 @@ func create_sprite(position: Vector2) -> void:
 	
 	sprite.gui_input.connect(func (event):
 		if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			print(position)
+			$"..".target_position = $"../../TileMapLayer".local_to_map($"../../TileMapLayer".to_local(position))
 	)

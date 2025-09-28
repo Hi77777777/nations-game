@@ -4,6 +4,8 @@ var tile_position := Vector2i(0, 0)
 var time_passed := 0
 var prev_position = null
 
+var target_position = null
+
 func move_to_random_neighbour():
 	var neighbours := []
 	var tilemap = $"../TileMapLayer"
@@ -39,14 +41,14 @@ func move_to_random_neighbour():
 func _process(delta: float) -> void:
 	for child in get_parent().get_children():
 		if child is CharacterBody2D and child != self:
-			if self.tile_position == child.tile_position:
+			if self.tile_position == Vector2i(child.tile_position):
 				await get_tree().create_timer(2.0).timeout
 				self.queue_free()
 				return # Exit early to avoid further checks after queue_free()
 
 	time_passed += 1
-	if time_passed % 60 == 0:
-		move_to_random_neighbour()
+	#if time_passed % 60 == 0:
+		#move_to_random_neighbour()
 
 func get_can_go():
 	var tilemap = $"../TileMapLayer"
