@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://yd3spvhwifq4"]
+
+[ext_resource type="Script" uid="uid://0fd88jw35bpu" path="res://tank.gd" id="1_ia2xg"]
+[ext_resource type="Texture2D" uid="uid://dtbg51qgqvl0d" path="res://tank_720-removebg-preview.png" id="2_4ydke"]
+[ext_resource type="Script" uid="uid://casq5mqts0l8" path="res://click.gd" id="3_u2ukr"]
+[ext_resource type="Texture2D" uid="uid://cmsh338uawmbd" path="res://images/yellow_outline.png" id="4_62mve"]
+
+[sub_resource type="GDScript" id="GDScript_a62es"]
+
+[node name="CharacterBody2D5" type="CharacterBody2D"]
+script = ExtResource("1_ia2xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -5.9999924)
+scale = Vector2(0.37278584, 0.4477612)
+texture = ExtResource("2_4ydke")
+script = SubResource("GDScript_a62es")
+
+[node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+collision_mask = 0
+script = ExtResource("3_u2ukr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -70, 70, -70, 100, 0, 70, 70, 0, 70, -70, 70, -100, 0, -70, -70)
+
+[node name="YellowOutline" type="Sprite2D" parent="."]
+texture = ExtResource("4_62mve")
