@@ -1,6 +1,10 @@
 extends Area2D
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and Selections.current_selection_mode == "none":
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("Left mouse button clicked on shape:", shape_idx)
+			$"../YellowOutline".visible = true
+			Selections.current_selection_mode = "to"
+
+func _ready() -> void:
+	$"../YellowOutline".visible = false

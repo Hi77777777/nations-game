@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://7fx7gl6xoudu"]
+[gd_scene load_steps=6 format=3 uid="uid://7fx7gl6xoudu"]
 
 [ext_resource type="Script" uid="uid://0fd88jw35bpu" path="res://tank.gd" id="1_6lwfj"]
 [ext_resource type="Texture2D" uid="uid://dtbg51qgqvl0d" path="res://tank_720-removebg-preview.png" id="2_1ealj"]
+[ext_resource type="Texture2D" uid="uid://cmsh338uawmbd" path="res://images/yellow_outline.png" id="4_lk6ub"]
 [ext_resource type="Script" uid="uid://casq5mqts0l8" path="res://click.gd" id="4_yfqcd"]
 
 [sub_resource type="GDScript" id="GDScript_a62es"]
@@ -19,4 +20,7 @@ script = SubResource("GDScript_a62es")
 script = ExtResource("4_yfqcd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -70, 70, 0, 0, 70, -70, 0)
+polygon = PackedVector2Array(0, -70, 70, -70, 100, 0, 70, 70, 0, 70, -70, 70, -100, 0, -70, -70)
+
+[node name="YellowOutline" type="Sprite2D" parent="."]
+texture = ExtResource("4_lk6ub")
