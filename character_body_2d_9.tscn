@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://delqtrmael3vb"]
 
 [ext_resource type="Script" uid="uid://b745agjfcfsx5" path="res://plane.gd" id="1_h0moh"]
-[ext_resource type="Texture2D" uid="uid://bbxf7ge867o4t" path="res://plane_720-removebg-preview.png" id="2_r3e0w"]
+[ext_resource type="Texture2D" uid="uid://btxufntvh7qjg" path="res://blue_plane_720-removebg-preview.png" id="2_h0moh"]
 [ext_resource type="Script" uid="uid://casq5mqts0l8" path="res://click.gd" id="3_solc2"]
 [ext_resource type="Texture2D" uid="uid://cmsh338uawmbd" path="res://images/yellow_outline.png" id="4_1bf32"]
 
@@ -13,7 +13,7 @@ script = ExtResource("1_h0moh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8.4703295e-22, 0)
 scale = Vector2(0.4690016, 0.4340796)
-texture = ExtResource("2_r3e0w")
+texture = ExtResource("2_h0moh")
 script = SubResource("GDScript_a62es")
 
 [node name="Area2D" type="Area2D" parent="."]
