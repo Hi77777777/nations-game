@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=24 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d3bmw0k6dqc5u" path="res://nuke_720-removebg-preview.png" id="15_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://2fg4vgsjnedm" path="res://tsar-bomba1-removebg-preview_360.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://cow10gybe6sr8" path="res://lose_screen_720.png" id="17_k73cj"]
+[ext_resource type="AudioStream" uid="uid://uducwfakwr67" path="res://nuclear-explosion-386181.mp3" id="18_k73cj"]
 
 [sub_resource type="Animation" id="Animation_flf07"]
 resource_name = "nuke"
@@ -261,17 +262,17 @@ offset = Vector2(2023.0002, -195.00003)
 
 [node name="TsarBomba1RemovebgPreview363" type="Sprite2D" parent="Node"]
 position = Vector2(491.0005, 142.99951)
-scale = Vector2(5, 5)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("16_flf07")
 
 [node name="TsarBomba1RemovebgPreview364" type="Sprite2D" parent="Node"]
 position = Vector2(1955, 222.00002)
-scale = Vector2(5, 5)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("16_flf07")
 
 [node name="TsarBomba1RemovebgPreview365" type="Sprite2D" parent="Node"]
 position = Vector2(1263.0001, 308.99997)
-scale = Vector2(5, 5)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("16_flf07")
 
 [node name="TsarBomba1RemovebgPreview360" type="Sprite2D" parent="Node"]
@@ -281,16 +282,16 @@ texture = ExtResource("16_flf07")
 
 [node name="TsarBomba1RemovebgPreview361" type="Sprite2D" parent="Node"]
 position = Vector2(1707, -2229)
-scale = Vector2(5, 5)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("16_flf07")
 
 [node name="TsarBomba1RemovebgPreview362" type="Sprite2D" parent="Node"]
 position = Vector2(400, -2294)
-scale = Vector2(5, 5)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("16_flf07")
 
 [node name="Nuke720RemovebgPreview2" type="Sprite2D" parent="Node"]
-position = Vector2(481.0003, 380.00003)
+position = Vector2(457.43658, -414.1819)
 rotation = -3.1415925
 scale = Vector2(0.9999999, 0.99999994)
 texture = ExtResource("15_ta5nu")
@@ -310,3 +311,14 @@ position = Vector2(-0.00024414063, 0)
 scale = Vector2(0.9999999, 0.99999994)
 zoom = Vector2(0.2, 0.2)
 script = ExtResource("1_0e48y")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_k73cj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LoseScreen720" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576.50006, 323)
+scale = Vector2(1.6013889, 1.1249999)
+texture = ExtResource("17_k73cj")
