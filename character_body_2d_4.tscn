@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpjqssern4fgc"]
+[gd_scene load_steps=6 format=3 uid="uid://d3hgvrk1qxbx2"]
 
 [ext_resource type="Script" uid="uid://0fd88jw35bpu" path="res://tank.gd" id="1_6h2sy"]
-[ext_resource type="Texture2D" uid="uid://dtbg51qgqvl0d" path="res://tank_720-removebg-preview.png" id="2_rdtia"]
+[ext_resource type="Texture2D" uid="uid://bhepvcky6r5wt" path="res://addons/hexagon_tilemaplayer/demo/blue_tank_720-removebg-preview.png" id="2_6h2sy"]
 [ext_resource type="Script" uid="uid://casq5mqts0l8" path="res://click.gd" id="3_013s6"]
 [ext_resource type="Texture2D" uid="uid://cmsh338uawmbd" path="res://images/yellow_outline.png" id="4_l4jsf"]
 
@@ -13,7 +13,7 @@ script = ExtResource("1_6h2sy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4, -5.9999924)
 scale = Vector2(0.37278584, 0.4477612)
-texture = ExtResource("2_rdtia")
+texture = ExtResource("2_6h2sy")
 script = SubResource("GDScript_a62es")
 
 [node name="Area2D" type="Area2D" parent="."]
