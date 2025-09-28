@@ -4,20 +4,47 @@
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://billnsfegxxlk" path="res://plane.tscn" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
-[ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://dt21e14tvyhwd" path="res://ship.tscn" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://oydb6l15meym" path="res://5493408566738944_looped (2).wav" id="6_kdubu"]
 [ext_resource type="PackedScene" uid="uid://d3hgvrk1qxbx2" path="res://character_body_2d_4.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://yd3spvhwifq4" path="res://character_body_2d_5.tscn" id="8_rj586"]
-[ext_resource type="PackedScene" uid="uid://c6p8sx3lhr8ip" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
-[ext_resource type="PackedScene" uid="uid://delqtrmael3vb" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
-[ext_resource type="PackedScene" uid="uid://uo8dbv0ga7jl" path="res://character_body_2d_7.tscn" id="11_hqns4"]
-[ext_resource type="PackedScene" uid="uid://b8bd1pxnqbaha" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://btne4y8nau817" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://b0m73124e5d4l" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://b6dsba8d2mece" path="res://character_body_2d_7.tscn" id="11_hqns4"]
+[ext_resource type="PackedScene" uid="uid://ot8lthug52b5" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://li1rfoo3r8si" path="res://pixil-frame-0.png" id="13_0h7mo"]
-[ext_resource type="Script" uid="uid://hapw110c83v1" path="res://character_body_2d_7.gd" id="14_d2bti"]
+[ext_resource type="Script" path="res://character_body_2d_7.gd" id="14_d2bti"]
 [ext_resource type="Texture2D" uid="uid://d3bmw0k6dqc5u" path="res://nuke_720-removebg-preview.png" id="15_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://2fg4vgsjnedm" path="res://tsar-bomba1-removebg-preview_360.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://cow10gybe6sr8" path="res://lose_screen_720.png" id="17_k73cj"]
 [ext_resource type="AudioStream" uid="uid://uducwfakwr67" path="res://nuclear-explosion-386181.mp3" id="18_k73cj"]
+
+[sub_resource type="Animation" id="Animation_k73cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(481.0003, 380.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_flf07"]
 resource_name = "nuke"
@@ -117,33 +144,6 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(5, 5)]
-}
-
-[sub_resource type="Animation" id="Animation_k73cj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(481.0003, 380.00003)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjqkl"]
@@ -319,7 +319,6 @@ script = ExtResource("1_0e48y")
 stream = ExtResource("18_k73cj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="LoseScreen720" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(576.50006, 323)
