@@ -41,11 +41,14 @@ func move_to_random_neighbour():
 func _process(delta: float) -> void:
 	var tank = $"../CharacterBody2D2"
 	var ship = $"../CharacterBody2D3"
-	if self.position == tank.position or tank.position == ship.position:
-		#destroy self
-
+	if tank and self.tile_position == tank.tile_position:
 		await get_tree().create_timer(2.0).timeout
 		self.queue_free()
+
+	else:
+		if ship and self.tile_position == ship.tile_position:
+			await get_tree().create_timer(2.0).timeout
+			self.queue_free()
 
 	time_passed += 1
 	if time_passed % 60 == 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=7 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -6,11 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://oydb6l15meym" path="res://5493408566738944_looped (2).wav" id="6_kdubu"]
-[ext_resource type="Script" uid="uid://yvu3mfdk8psc" path="res://curser.gd" id="7_rj586"]
-[ext_resource type="Texture2D" uid="uid://bu705ovelxcrx" path="res://addons/hexagon_tilemaplayer/demo/cursor_720-removebg-preview.png" id="8_rj586"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
-size = Vector2(58, 81)
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,15 +28,3 @@ collision_enabled = false
 stream = ExtResource("6_kdubu")
 autoplay = true
 max_polyphony = 64
-
-[node name="CharacterBody2D4" type="CharacterBody2D" parent="."]
-script = ExtResource("7_rj586")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D4"]
-position = Vector2(158.50006, -387.5)
-scale = Vector2(1.5249597, 1.3855723)
-texture = ExtResource("8_rj586")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4"]
-position = Vector2(-58, -324.5)
-shape = SubResource("RectangleShape2D_4d7sh")

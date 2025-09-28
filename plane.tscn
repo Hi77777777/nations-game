@@ -17,10 +17,14 @@ texture = ExtResource("2_dpar4")
 script = SubResource("GDScript_a62es")
 
 [node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+priority = 1
 script = ExtResource("4_6xwvw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -74, 44, -74, 87, 0, 44, 74, 0, 74, -44, 74, -87, 0, -44, -74)
+position = Vector2(-0.09999972, -0.20000446)
+scale = Vector2(0.9992816, 0.9983108)
+polygon = PackedVector2Array(0, -74, 44, -74, 87, 0, 46, 73, 0, 74, -44, 74, -87, 0, -44, -74)
 
 [node name="YellowOutline" type="Sprite2D" parent="."]
 texture = ExtResource("4_28khi")
