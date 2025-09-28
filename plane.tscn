@@ -7,7 +7,7 @@
 
 [sub_resource type="GDScript" id="GDScript_a62es"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 script = ExtResource("1_s46f0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

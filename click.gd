@@ -27,7 +27,7 @@ func create_sprite(position: Vector2) -> void:
 	sprite.scale = Vector2(1,1)
 	
 	# Add the sprite to the scene
-	$"../..".add_child(sprite)
+	$"../..".add_child.call_deferred(sprite)
 	
 	# Connect input
 	sprite.gui_input.connect(func (event):
