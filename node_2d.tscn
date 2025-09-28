@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=13 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://oydb6l15meym" path="res://5493408566738944_looped (2).wav" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://d3hgvrk1qxbx2" path="res://character_body_2d_4.tscn" id="7_d21ai"]
+[ext_resource type="PackedScene" uid="uid://yd3spvhwifq4" path="res://character_body_2d_5.tscn" id="8_rj586"]
+[ext_resource type="PackedScene" uid="uid://c6p8sx3lhr8ip" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://delqtrmael3vb" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://uo8dbv0ga7jl" path="res://character_body_2d_7.tscn" id="11_hqns4"]
+[ext_resource type="PackedScene" uid="uid://b8bd1pxnqbaha" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,14 +36,14 @@ stream = ExtResource("6_kdubu")
 autoplay = true
 max_polyphony = 64
 
-[node name="CharacterBody2D4" parent="." instance=ExtResource("3_q6r6c")]
+[node name="CharacterBody2D4" parent="." instance=ExtResource("7_d21ai")]
 
-[node name="CharacterBody2D5" parent="." instance=ExtResource("3_q6r6c")]
+[node name="CharacterBody2D5" parent="." instance=ExtResource("8_rj586")]
 
-[node name="CharacterBody2D6" parent="." instance=ExtResource("4_q6r6c")]
+[node name="CharacterBody2D8" parent="." instance=ExtResource("9_4d7sh")]
 
-[node name="CharacterBody2D7" parent="." instance=ExtResource("4_q6r6c")]
+[node name="CharacterBody2D9" parent="." instance=ExtResource("10_ir8iy")]
 
-[node name="CharacterBody2D8" parent="." instance=ExtResource("3_0hol4")]
+[node name="CharacterBody2D10" parent="." instance=ExtResource("11_hqns4")]
 
-[node name="CharacterBody2D9" parent="." instance=ExtResource("3_0hol4")]
+[node name="CharacterBody2D6" parent="." instance=ExtResource("12_x0ka3")]
