@@ -1,24 +1,187 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhbi6wsv5775q"]
+[gd_scene load_steps=24 format=4 uid="uid://dhbi6wsv5775q"]
 
 [ext_resource type="Script" uid="uid://t5kjk00fsm7k" path="res://addons/hexagon_tilemaplayer/demo/camera_movement.gd" id="1_0e48y"]
 [ext_resource type="TileSet" uid="uid://l4anov1m1f53" path="res://addons/hexagon_tilemaplayer/demo/vertical_tile_set.tres" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://billnsfegxxlk" path="res://plane.tscn" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://7fx7gl6xoudu" path="res://tank.tscn" id="3_q6r6c"]
-[ext_resource type="PackedScene" uid="uid://dt21e14tvyhwd" path="res://ship.tscn" id="4_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://nomwq8u6s7dq" path="res://ship.tscn" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://oydb6l15meym" path="res://5493408566738944_looped (2).wav" id="6_kdubu"]
 [ext_resource type="PackedScene" uid="uid://d3hgvrk1qxbx2" path="res://character_body_2d_4.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://yd3spvhwifq4" path="res://character_body_2d_5.tscn" id="8_rj586"]
-[ext_resource type="PackedScene" uid="uid://btne4y8nau817" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
-[ext_resource type="PackedScene" uid="uid://b0m73124e5d4l" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
-[ext_resource type="PackedScene" uid="uid://b6dsba8d2mece" path="res://character_body_2d_7.tscn" id="11_hqns4"]
-[ext_resource type="PackedScene" uid="uid://ot8lthug52b5" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://c6p8sx3lhr8ip" path="res://character_body_2d_8.tscn" id="9_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://delqtrmael3vb" path="res://character_body_2d_9.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" uid="uid://uo8dbv0ga7jl" path="res://character_body_2d_7.tscn" id="11_hqns4"]
+[ext_resource type="PackedScene" uid="uid://b8bd1pxnqbaha" path="res://character_body_2d_6.tscn" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://li1rfoo3r8si" path="res://pixil-frame-0.png" id="13_0h7mo"]
+[ext_resource type="Script" uid="uid://hapw110c83v1" path="res://character_body_2d_7.gd" id="14_d2bti"]
+[ext_resource type="Texture2D" uid="uid://d3bmw0k6dqc5u" path="res://nuke_720-removebg-preview.png" id="15_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://2fg4vgsjnedm" path="res://tsar-bomba1-removebg-preview_360.png" id="16_flf07"]
+[ext_resource type="Texture2D" uid="uid://cow10gybe6sr8" path="res://lose_screen_720.png" id="17_k73cj"]
+[ext_resource type="AudioStream" uid="uid://uducwfakwr67" path="res://nuclear-explosion-386181.mp3" id="18_k73cj"]
+
+[sub_resource type="Animation" id="Animation_flf07"]
+resource_name = "nuke"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1.6333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(481.0003, 380.00003), Vector2(400, -2350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TsarBomba1RemovebgPreview361:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5999999, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TsarBomba1RemovebgPreview362:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5666666, 2.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Nuke720RemovebgPreview2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, -2350), Vector2(481.0003, 380.00003)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../TsarBomba1RemovebgPreview363:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.9133334, 2.4133334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../TsarBomba1RemovebgPreview364:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.9133333, 2.4133334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../TsarBomba1RemovebgPreview365:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.88, 2.38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_k73cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Nuke720RemovebgPreview:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(481.0003, 380.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TsarBomba1RemovebgPreview360:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjqkl"]
+_data = {
+&"RESET": SubResource("Animation_k73cj"),
+&"nuke": SubResource("Animation_flf07")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("15_ta5nu")
+region = Rect2(0, 0, 139, 111)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flf07"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k73cj")
+}],
+"loop": false,
+"name": &"nuke",
+"speed": 1.0
+}]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.2, 0.2)
-script = ExtResource("1_0e48y")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAgAAAAAAAAD7/wIAAgAAAAAAAAD7/wMAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wAAAgAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAwAAAAAAAAD8/wQAAgAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAgAAAAAAAAD9/wMAAgAAAAAAAAD9/wQAAgAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wQAAgAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAwAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAgAAAAAAAAAFAAIAAgAAAAAAAAAFAAMAAwAAAAAAAAAFAAQAAgAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAQAAwAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAgAAAAAAAAAJAAIAAwAAAAAAAAAJAAMAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAwAAAAAAAAAKAAQAAgAAAAAAAAALAAAAAQAAAAAAAAALAAEAAgAAAAAAAAALAAIAAgAAAAAAAAALAAMAAgAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAQAAgAAAAAAAAANAAAAAQAAAAAAAAANAAEAAgAAAAAAAAANAAIAAgAAAAAAAAANAAMAAgAAAAAAAAANAAQAAgAAAAAAAAD7////AQAAAAAAAAD7//X/AQAAAAAAAAD7//b/AQAAAAAAAAD7//f/AQAAAAAAAAD7//j/AQAAAAAAAAD7//n/AQAAAAAAAAD7//r/AQAAAAAAAAD7//v/AQAAAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAAAAAD7//7/AQAAAAAAAAD8//X/AQAAAAAAAAD8//b/AQAAAAAAAAD8//f/AQAAAAAAAAD8//j/AQAAAAAAAAD8//n/AQAAAAAAAAD8//r/AQAAAAAAAAD8//v/AQAAAAAAAAD8//z/AQAAAAAAAAD8//3/AQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD9//X/AQAAAAAAAAD9//b/AQAAAAAAAAD9//f/AgAAAAAAAAD9//j/AQAAAAAAAAD9//n/AQAAAAAAAAD9//r/AQAAAAAAAAD9//v/AQAAAAAAAAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AgAAAAAAAAD+//X/AQAAAAAAAAD+//b/AQAAAAAAAAD+//f/AQAAAAAAAAD+//j/AQAAAAAAAAD+//n/AQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD///X/AQAAAAAAAAD///b/AQAAAAAAAAD///f/AQAAAAAAAAD///j/AQAAAAAAAAD///n/AQAAAAAAAAD///r/AQAAAAAAAAD///v/AgAAAAAAAAD///z/AQAAAAAAAAD///3/AQAAAAAAAAAAAPX/AQAAAAAAAAAAAPb/AQAAAAAAAAAAAPf/AQAAAAAAAAAAAPj/AQAAAAAAAAAAAPn/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AQAAAAAAAAABAPX/AQAAAAAAAAABAPb/AQAAAAAAAAABAPf/AQAAAAAAAAABAPj/AQAAAAAAAAABAPn/AQAAAAAAAAABAPr/AQAAAAAAAAABAPv/AgAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAABAP//AQAAAAAAAAACAPX/AQAAAAAAAAACAPb/AQAAAAAAAAACAPf/AQAAAAAAAAACAPj/AgAAAAAAAAACAPn/AQAAAAAAAAACAPr/AQAAAAAAAAACAPv/AQAAAAAAAAACAPz/AQAAAAAAAAADAPX/AQAAAAAAAAADAPb/AQAAAAAAAAADAPf/AgAAAAAAAAADAPj/AQAAAAAAAAADAPn/AQAAAAAAAAADAPr/AQAAAAAAAAADAP7/AQAAAAAAAAADAP//AQAAAAAAAAAEAPX/AQAAAAAAAAAEAPb/AQAAAAAAAAAEAPf/AQAAAAAAAAAEAPj/AQAAAAAAAAAEAPn/AQAAAAAAAAAEAPr/AQAAAAAAAAAEAPv/AQAAAAAAAAAEAPz/AQAAAAAAAAAEAP3/AQAAAAAAAAAEAP7/AQAAAAAAAAAEAP//AQAAAAAAAAAFAPX/AQAAAAAAAAAFAPb/AQAAAAAAAAAFAPf/AQAAAAAAAAAFAPj/AQAAAAAAAAAFAPn/AQAAAAAAAAAFAPr/AgAAAAAAAAAFAPv/AQAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAP//AQAAAAAAAAAGAPX/AgAAAAAAAAAGAPb/AgAAAAAAAAAGAPf/AgAAAAAAAAAGAPj/AgAAAAAAAAAGAPn/AgAAAAAAAAAGAPr/AgAAAAAAAAAGAPv/AgAAAAAAAAAGAPz/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAAAAAAGAP//AQAAAAAAAAAHAPX/AQAAAAAAAAAHAPb/AQAAAAAAAAAHAPf/AQAAAAAAAAAHAPj/AQAAAAAAAAAHAPn/AgAAAAAAAAAHAPr/AQAAAAAAAAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AgAAAAAAAAAHAP//AQAAAAAAAAAIAPX/AQAAAAAAAAAIAPb/AQAAAAAAAAAIAPf/AQAAAAAAAAAIAPj/AQAAAAAAAAAIAPn/AQAAAAAAAAAIAPr/AgAAAAAAAAAIAPv/AQAAAAAAAAAIAPz/AQAAAAAAAAAIAP3/AQAAAAAAAAAIAP7/AQAAAAAAAAAIAP//AQAAAAAAAAAJAPX/AQAAAAAAAAAJAPb/AQAAAAAAAAAJAPf/AQAAAAAAAAAJAPj/AQAAAAAAAAAJAPn/AQAAAAAAAAAJAPr/AgAAAAAAAAAJAPv/AQAAAAAAAAAJAPz/AQAAAAAAAAAJAP3/AQAAAAAAAAAJAP7/AQAAAAAAAAAJAP//AQAAAAAAAAAKAPX/AQAAAAAAAAAKAPb/AQAAAAAAAAAKAPf/AgAAAAAAAAAKAPj/AQAAAAAAAAAKAPn/AQAAAAAAAAAKAPr/AQAAAAAAAAAKAPv/AgAAAAAAAAAKAPz/AQAAAAAAAAAKAP3/AQAAAAAAAAAKAP7/AQAAAAAAAAAKAP//AQAAAAAAAAALAPX/AQAAAAAAAAALAPb/AQAAAAAAAAALAPf/AgAAAAAAAAALAPj/AQAAAAAAAAALAPn/AQAAAAAAAAALAPr/AgAAAAAAAAALAPv/AQAAAAAAAAALAPz/AQAAAAAAAAALAP3/AQAAAAAAAAALAP7/AQAAAAAAAAALAP//AgAAAAAAAAAMAPX/AQAAAAAAAAAMAPb/AQAAAAAAAAAMAPf/AQAAAAAAAAAMAPj/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AgAAAAAAAAAMAPz/AgAAAAAAAAAMAP3/AgAAAAAAAAAMAP7/AQAAAAAAAAAMAP//AgAAAAAAAAANAPX/AQAAAAAAAAANAPb/AQAAAAAAAAANAPf/AQAAAAAAAAANAPj/AQAAAAAAAAANAPn/AQAAAAAAAAANAPr/AQAAAAAAAAANAPv/AQAAAAAAAAANAPz/AQAAAAAAAAANAP3/AgAAAAAAAAANAP7/AgAAAAAAAAANAP//AQAAAAAAAAD7//T/AgAAAAAAAAD7/+//AgAAAAAAAAD7//D/AgAAAAAAAAD7//H/AgAAAAAAAAD7//L/AgAAAAAAAAD7//P/AgAAAAAAAAD8/+//AgAAAAAAAAD8//D/AgAAAAAAAAD8//H/AgAAAAAAAAD8//L/AgAAAAAAAAD8//P/AgAAAAAAAAD8//T/AgAAAAAAAAD9/+//AgAAAAAAAAD9//D/AwAAAAAAAAD9//H/AgAAAAAAAAD9//L/AgAAAAAAAAD9//P/AQAAAAAAAAD9//T/AQAAAAAAAAD+/+//AgAAAAAAAAD+//D/AgAAAAAAAAD+//H/AwAAAAAAAAD+//L/AgAAAAAAAAD+//P/AgAAAAAAAAD+//T/AQAAAAAAAAD//+//AgAAAAAAAAD///D/AgAAAAAAAAD///H/AgAAAAAAAAD///L/AgAAAAAAAAD///P/AgAAAAAAAAD///T/AwAAAAAAAAAAAO//AgAAAAAAAAAAAPD/AgAAAAAAAAAAAPH/AgAAAAAAAAAAAPL/AgAAAAAAAAAAAPP/AQAAAAAAAAAAAPT/AQAAAAAAAAABAO//AgAAAAAAAAABAPD/AgAAAAAAAAABAPH/AgAAAAAAAAABAPL/AgAAAAAAAAABAPP/AgAAAAAAAAABAPT/AgAAAAAAAAACAO//AgAAAAAAAAACAPD/AgAAAAAAAAACAPH/AgAAAAAAAAACAPL/AgAAAAAAAAACAPP/AgAAAAAAAAACAPT/AgAAAAAAAAADAO//AgAAAAAAAAADAPD/AgAAAAAAAAADAPH/AQAAAAAAAAADAPL/AQAAAAAAAAADAPP/AQAAAAAAAAADAPT/AgAAAAAAAAAEAO//AgAAAAAAAAAEAPD/AgAAAAAAAAAEAPH/AgAAAAAAAAAEAPL/AgAAAAAAAAAEAPP/AQAAAAAAAAAEAPT/AQAAAAAAAAAFAO//AgAAAAAAAAAFAPD/AgAAAAAAAAAFAPH/AwAAAAAAAAAFAPL/AgAAAAAAAAAFAPP/AQAAAAAAAAAFAPT/AQAAAAAAAAAGAO//AgAAAAAAAAAGAPD/AgAAAAAAAAAGAPH/AgAAAAAAAAAGAPL/AgAAAAAAAAAGAPP/AgAAAAAAAAAGAPT/AQAAAAAAAAAHAO//AgAAAAAAAAAHAPD/AgAAAAAAAAAHAPH/AgAAAAAAAAAHAPL/AgAAAAAAAAAHAPP/AgAAAAAAAAAHAPT/AgAAAAAAAAAIAO//AgAAAAAAAAAIAPD/AwAAAAAAAAAIAPH/AwAAAAAAAAAIAPL/AgAAAAAAAAAIAPP/AgAAAAAAAAAIAPT/AgAAAAAAAAAJAO//AgAAAAAAAAAJAPD/AwAAAAAAAAAJAPH/AgAAAAAAAAAJAPL/AQAAAAAAAAAJAPP/AQAAAAAAAAAJAPT/AgAAAAAAAAAKAO//AgAAAAAAAAAKAPD/AgAAAAAAAAAKAPH/AgAAAAAAAAAKAPL/AgAAAAAAAAAKAPP/AgAAAAAAAAAKAPT/AQAAAAAAAAALAO//AgAAAAAAAAALAPD/AgAAAAAAAAALAPH/AgAAAAAAAAALAPL/AgAAAAAAAAALAPP/AQAAAAAAAAALAPT/AQAAAAAAAAAMAO//AgAAAAAAAAAMAPD/AgAAAAAAAAAMAPH/AgAAAAAAAAAMAPL/AgAAAAAAAAAMAPP/AQAAAAAAAAAMAPT/AgAAAAAAAAANAO//AgAAAAAAAAANAPD/AgAAAAAAAAANAPH/AgAAAAAAAAANAPL/AgAAAAAAAAANAPP/AgAAAAAAAAANAPT/AgAAAAAAAAALAAQAAgAAAAAAAAD6/wUAAwAAAAAAAAD6/wQAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wAAAwAAAAAAAAD6////AwAAAAAAAAD6//7/AwAAAAAAAAD6//3/AwAAAAAAAAD6//z/AwAAAAAAAAD6//v/AwAAAAAAAAD6//r/AwAAAAAAAAD6//n/AwAAAAAAAAD6//j/AwAAAAAAAAD6//f/AwAAAAAAAAD6//b/AwAAAAAAAAD6//X/AwAAAAAAAAD6//T/AwAAAAAAAAD6//P/AwAAAAAAAAD6//L/AwAAAAAAAAD6//H/AwAAAAAAAAD6//D/AwAAAAAAAAD6/+//AwAAAAAAAAD7/+7/AwAAAAAAAAD8/+7/AwAAAAAAAAD9/+7/AwAAAAAAAAD+/+7/AwAAAAAAAAD//+7/AwAAAAAAAAAAAO7/AwAAAAAAAAABAO7/AwAAAAAAAAACAO7/AwAAAAAAAAADAO7/AwAAAAAAAAAEAO7/AwAAAAAAAAAFAO7/AwAAAAAAAAAGAO7/AwAAAAAAAAAHAO7/AwAAAAAAAAAIAO7/AwAAAAAAAAAJAO7/AwAAAAAAAAAKAO7/AwAAAAAAAAALAO7/AwAAAAAAAAAMAO7/AwAAAAAAAAANAO7/AwAAAAAAAAAOAO//AwAAAAAAAAAOAPD/AwAAAAAAAAAOAPH/AwAAAAAAAAAOAPL/AwAAAAAAAAAOAPP/AwAAAAAAAAAOAPT/AwAAAAAAAAAOAPX/AwAAAAAAAAAOAPb/AwAAAAAAAAAOAPf/AwAAAAAAAAAOAPj/AwAAAAAAAAAOAPn/AwAAAAAAAAAOAPr/AwAAAAAAAAAOAPv/AwAAAAAAAAAOAPz/AwAAAAAAAAAOAP3/AwAAAAAAAAAOAP7/AwAAAAAAAAAOAP//AwAAAAAAAAAOAAAAAwAAAAAAAAAOAAEAAwAAAAAAAAAOAAIAAwAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAD7/wUAAwAAAAAAAAD8/wUAAwAAAAAAAAD9/wUAAwAAAAAAAAD+/wUAAwAAAAAAAAD//wUAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAUAAwAAAAAAAAAKAAUAAwAAAAAAAAALAAUAAwAAAAAAAAAMAAUAAwAAAAAAAAANAAUAAwAAAAAAAAADAPv/AQAAAAAAAAADAPz/AQAAAAAAAAACAP3/AQAAAAAAAAADAP3/AgAAAAAAAAACAP//AQAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAP7/AgAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAAAAP//AQAAAAAAAAD///7/AQAAAAAAAAA=")
@@ -65,3 +228,100 @@ position = Vector2(923, 99)
 position = Vector2(-2442, 1408)
 scale = Vector2(9.54, 6.8800006)
 texture = ExtResource("13_0h7mo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../../Node/CharacterBody2D7")
+libraries = {
+&"": SubResource("AnimationLibrary_rjqkl")
+}
+
+[node name="Node" type="Node2D" parent="."]
+visible = false
+
+[node name="CharacterBody2D7" type="CharacterBody2D" parent="Node"]
+position = Vector2(-0.00024414063, 0)
+scale = Vector2(0.9999999, 0.99999994)
+script = ExtResource("14_d2bti")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node/CharacterBody2D7"]
+position = Vector2(-27, 37)
+scale = Vector2(11.633993, 11.226351)
+sprite_frames = SubResource("SpriteFrames_flf07")
+animation = &"new_animation"
+
+[node name="Nuke720RemovebgPreview" type="Sprite2D" parent="Node"]
+position = Vector2(481.0003, 380.00003)
+scale = Vector2(0.9999999, 0.99999994)
+texture = ExtResource("15_ta5nu")
+
+[node name="Nuke720RemovebgPreview" type="Sprite2D" parent="Node/Nuke720RemovebgPreview"]
+position = Vector2(683.0001, 190.00002)
+texture = ExtResource("15_ta5nu")
+
+[node name="Nuke720RemovebgPreview" type="Sprite2D" parent="Node/Nuke720RemovebgPreview/Nuke720RemovebgPreview"]
+position = Vector2(-1396.0002, 75)
+texture = ExtResource("15_ta5nu")
+offset = Vector2(2023.0002, -195.00003)
+
+[node name="TsarBomba1RemovebgPreview363" type="Sprite2D" parent="Node"]
+position = Vector2(491.0005, 142.99951)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_flf07")
+
+[node name="TsarBomba1RemovebgPreview364" type="Sprite2D" parent="Node"]
+position = Vector2(1955, 222.00002)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_flf07")
+
+[node name="TsarBomba1RemovebgPreview365" type="Sprite2D" parent="Node"]
+position = Vector2(1263.0001, 308.99997)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_flf07")
+
+[node name="TsarBomba1RemovebgPreview360" type="Sprite2D" parent="Node"]
+position = Vector2(1089, -2110)
+scale = Vector2(5, 5)
+texture = ExtResource("16_flf07")
+
+[node name="TsarBomba1RemovebgPreview361" type="Sprite2D" parent="Node"]
+position = Vector2(1707, -2229)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_flf07")
+
+[node name="TsarBomba1RemovebgPreview362" type="Sprite2D" parent="Node"]
+position = Vector2(400, -2294)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_flf07")
+
+[node name="Nuke720RemovebgPreview2" type="Sprite2D" parent="Node"]
+position = Vector2(457.43658, -414.1819)
+rotation = -3.1415925
+scale = Vector2(0.9999999, 0.99999994)
+texture = ExtResource("15_ta5nu")
+
+[node name="Nuke720RemovebgPreview" type="Sprite2D" parent="Node/Nuke720RemovebgPreview2"]
+position = Vector2(-1415.0005, -103.99959)
+texture = ExtResource("15_ta5nu")
+
+[node name="Nuke720RemovebgPreview" type="Sprite2D" parent="Node/Nuke720RemovebgPreview2/Nuke720RemovebgPreview"]
+position = Vector2(-1396.0002, 75)
+texture = ExtResource("15_ta5nu")
+offset = Vector2(2023.0002, -195.00003)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(-0.00024414063, 0)
+scale = Vector2(0.9999999, 0.99999994)
+zoom = Vector2(0.2, 0.2)
+script = ExtResource("1_0e48y")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_k73cj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LoseScreen720" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576.50006, 323)
+scale = Vector2(1.6013889, 1.1249999)
+texture = ExtResource("17_k73cj")
