@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dstwouben6044"]
+[gd_scene load_steps=6 format=3 uid="uid://billnsfegxxlk"]
 
 [ext_resource type="Script" uid="uid://b745agjfcfsx5" path="res://plane.gd" id="1_s46f0"]
 [ext_resource type="Texture2D" uid="uid://bbxf7ge867o4t" path="res://plane_720-removebg-preview.png" id="2_dpar4"]

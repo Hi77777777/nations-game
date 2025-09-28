@@ -29,7 +29,20 @@ func create_sprite(position: Vector2) -> void:
 	# Add the sprite to the scene
 	$"../..".add_child(sprite)
 	
+	# Connect input
 	sprite.gui_input.connect(func (event):
 		if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			clear_outlines()
+			$"../YellowOutline".visible = false
+			Selections.current_selection_mode = "none"
 			$"..".target_position = $"../../TileMapLayer".local_to_map($"../../TileMapLayer".to_local(position))
 	)
+
+func clear_outlines() -> void:
+	# Hide yellow outline
+	$"../YellowOutline".visible = false
+	
+	# Remove all TextureRects (red outlines)
+	for child in $"../..".get_children():
+		if child is TextureRect and child.texture == sprite_texture:
+			child.queue_free()
