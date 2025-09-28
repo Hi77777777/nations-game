@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var tilemap = $"../TileMapLayer"
 
 # State
-var tile_position := Vector2.ZERO
+var ABABA := Vector2.ZERO
 var prev_position := Vector2.ZERO
 var frame_counter := 0
 var frames_per_move := 60  # Change for faster/slower stepping
@@ -87,8 +87,8 @@ func _ready() -> void:
 
 	# Start at a random walkable tile
 	var random_cell = walkable_cells.pick_random()
-	tile_position = random_cell
-	position = tilemap.to_global(tilemap.map_to_local(tile_position))
+	ABABA = random_cell
+	position = tilemap.to_global(tilemap.map_to_local(ABABA))
 
 	# Build the A* graph
 	astar = AStar2D.new()
@@ -123,7 +123,7 @@ func _process(_delta: float) -> void:
 	# Collision with other characters
 	for child in get_parent().get_children():
 		if child is CharacterBody2D and child != self:
-			if Vector2i(tile_position) == Vector2i(child.tile_position):
+			if Vector2i(ABABA) == Vector2i(child.ABABA):
 				await get_tree().create_timer(2.0).timeout
 				units -= 1
 				print(units)
@@ -142,7 +142,7 @@ func _process(_delta: float) -> void:
 func _move_random() -> void:
 	var neighbours := []
 	for dir in NEIGHBOURS:
-		var neighbour_pos = tile_position + dir
+		var neighbour_pos = ABABA + dir
 		if is_walkable(neighbour_pos) and neighbour_pos != prev_position:
 			neighbours.append(neighbour_pos)
 
@@ -150,23 +150,23 @@ func _move_random() -> void:
 	if neighbours.size() > 0:
 		next_tile = neighbours.pick_random()
 
-	prev_position = tile_position
-	tile_position = next_tile
+	prev_position = ABABA
+	ABABA = next_tile
 	position = tilemap.to_global(tilemap.map_to_local(next_tile))
 
 func _follow_astar() -> void:
 	if current_path.is_empty():
-		current_path = get_astar_path(tile_position, target_position)
-		if current_path.size() > 0 and current_path[0] == tile_position:
+		current_path = get_astar_path(ABABA, target_position)
+		if current_path.size() > 0 and current_path[0] == ABABA:
 			current_path.remove_at(0)
 
 	if current_path.size() > 0:
 		var next_tile = current_path.pop_front()
-		prev_position = tile_position
-		tile_position = next_tile
+		prev_position = ABABA
+		ABABA = next_tile
 		position = tilemap.to_global(tilemap.map_to_local(next_tile))
 
-		if Vector2i(tile_position) == Vector2i(target_position):
+		if Vector2i(ABABA) == Vector2i(target_position):
 			target_position = null
 			current_path.clear()
 
