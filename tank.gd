@@ -50,6 +50,9 @@ func _process(delta: float) -> void:
 	if time_passed % 60 == 0:
 		move_to_random_neighbour()
 
+func get_can_go():
+	var tilemap = $"../TileMapLayer"
+	return tilemap.get_used_cells_by_id(2)
 
 func _ready() -> void:
 	randomize()
