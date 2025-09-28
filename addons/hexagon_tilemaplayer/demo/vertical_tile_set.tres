@@ -47,4 +47,4 @@ custom_data_layer_2/type = 21
 sources/0 = SubResource("TileSetAtlasSource_q3d33")
 sources/1 = SubResource("TileSetAtlasSource_6rdgb")
 sources/2 = SubResource("TileSetAtlasSource_vkvoj")
-sources/3 = SubResource("TileSetAtlasSource_6owbj")
+sources/5 = SubResource("TileSetAtlasSource_6owbj")
